@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 interface SelectOptionsProps {
     value: string;
     label: string;
@@ -13,7 +12,7 @@ interface CustomSelectProps<I> extends React.InputHTMLAttributes<HTMLSelectEleme
 }
 
 
-const Select = <I extends { [key: string ]: any }>({ id, name, label, options, ...rest }: CustomSelectProps<I>) => {
+const Select = <I,>({ id, name, label, options, ...rest }: CustomSelectProps<I>) => {
   return (
     <div className="mb-4">
       <label htmlFor={id} className="block text-sm font-medium text-gray-600">

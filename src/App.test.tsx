@@ -24,12 +24,12 @@ describe('App component', () => {
   test('submits the form correctly', async () => {
     render(<App />);
     // Fill in the form
-    console.log(screen.getAllByLabelText(/Bio*/))
     userEvent.type(screen.getByLabelText(/First Name*/i), 'John');
     userEvent.type(screen.getByLabelText(/Last Name*/i), 'Doe');
     userEvent.type(screen.getByLabelText(/Date Of Birth*/i), '2023-11-22');
-    const jobSelect = await screen.findByLabelText(/Job*/i);
-    userEvent.selectOptions(jobSelect, 'Firefighter');
+    userEvent.type(screen.getByLabelText(/Job*/i), 'Firefighter');
+    // const jobSelect = await screen.findByLabelText(/Job*/i);
+    // userEvent.selectOptions(jobSelect, 'Firefighter');
     userEvent.type(screen.getAllByLabelText(/Bio*/)[1], 'Lorem ipsum');
     userEvent.type(screen.getByLabelText(/City*/i), 'London');
     userEvent.type(screen.getByLabelText(/Country*/i), 'United Kingdom');
@@ -41,7 +41,7 @@ describe('App component', () => {
 
     // Wait for the card to be displayed
     await waitFor(() => {
-      expect(screen.getByText(/Close/i)).toBeInTheDocument();
+      expect(screen.getByText(/Edit/i)).toBeInTheDocument();
     });
   });
 

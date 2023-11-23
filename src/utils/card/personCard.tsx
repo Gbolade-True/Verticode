@@ -15,7 +15,7 @@ export const PersonCard = ({ person, onClose }: IPersonCardProps) => {
         className="absolute top-4 right-4 text-green-800 hover:text-green-600"
         onClick={onClose}
       >
-        Close
+        Edit
       </button>
       : null}
       <div className="mb-4">
@@ -26,11 +26,12 @@ export const PersonCard = ({ person, onClose }: IPersonCardProps) => {
       <hr className="my-4 border-t border-green-300" />
       <div className="mb-4">
         <p className="text-sm">{`Location: ${location.city}, ${location.country}`}</p>
-        <p className="text-sm">{`Location: ${location.lat}, ${location.long}`}</p>
+        <p className="text-sm">{`${location.lat}, ${location.long}`}</p>
       </div>
       <hr className="my-4 border-t border-green-300" />
       <div className="mb-4">
-        <p className="text-base">{`Bio: ${bio}`}</p>
+        <p className="m-0">Bio:</p>
+        <p className="text-base">{`${bio}`}</p>
       </div>
       <hr className="my-4 border-t border-green-300" />
       <div className="flex justify-between items-center">

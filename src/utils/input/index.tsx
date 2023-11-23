@@ -6,7 +6,7 @@ interface CustomInputProps<I> extends React.InputHTMLAttributes<HTMLInputElement
 }
 
 
-const Input = <I extends { [key: string ]: any }>({ id, name, label, ...rest }: CustomInputProps<I>) => {
+const Input = <I,>({ id, name, label, ...rest }: CustomInputProps<I>) => {
   return (
     <div className="mb-4">
       <label htmlFor={id} className="block text-sm font-medium text-gray-600">

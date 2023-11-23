@@ -5,9 +5,7 @@ interface CustomTextareaProps<I> extends React.InputHTMLAttributes<HTMLTextAreaE
     name: Extract<keyof I, string>;
 }
 
-export const Textarea = <I extends { [key: string ]: any }>(
-    { id, name, label, ...rest }
-: CustomTextareaProps<I>) => {
+export const Textarea = <I,>({ id, name, label, ...rest }: CustomTextareaProps<I>) => {
 
     return(
         <div className="mb-4">

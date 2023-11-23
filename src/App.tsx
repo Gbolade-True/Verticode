@@ -1,12 +1,11 @@
 import { useState } from "react";
 import logo from "./logo.png";
 import Input from "./utils/input";
-import Select from "./utils/select";
+import { ISelectOptionsProps, TypeOrSelect } from "./utils/select/typeOrSelect";
 import { JobOptions } from "./utils/constants";
 import { Textarea } from "./utils/textarea";
 import { PersonCard } from "./utils/card/personCard";
 import { initialFormData, mapPersonFormDataToPerson, validateFormData } from "./utils/personHelpers";
-
 export interface IPersonFormData {
   firstName: string;
   lastName: string;
@@ -33,6 +32,13 @@ function App() {
     }));
   };
 
+  const handleSelectClick = (name: string, item: ISelectOptionsProps) => {
+    setFormData((prevData: any) => ({
+      ...prevData,
+      [name]: item.value,
+    }));
+  };
+
   const submit = (e: any) => {
     e.preventDefault();
     const [isValid, reason] = validateFormData(formData)
@@ -42,7 +48,6 @@ function App() {
     }
 
     const person = mapPersonFormDataToPerson(formData);
-    console.log(person, 'wecvewcw');
     setShowFormResults(true);
     return person;
   };
@@ -87,12 +92,13 @@ function App() {
           onChange={handleChange}
           required
         />
-        <Select 
+        <TypeOrSelect 
           label="Job"
           id="job"
           name="job"
           value={formData.job}
           onChange={handleChange}
+          onSelectClick={handleSelectClick}
           required
           options={JobOptions}
         />
