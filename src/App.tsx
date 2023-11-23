@@ -6,6 +6,8 @@ import { JobOptions } from "./utils/constants";
 import { Textarea } from "./utils/textarea";
 import { PersonCard } from "./utils/card/personCard";
 import { initialFormData, mapPersonFormDataToPerson, validateFormData } from "./utils/personHelpers";
+
+const currentDate = new Date().toISOString().split('T')[0];
 export interface IPersonFormData {
   firstName: string;
   lastName: string;
@@ -63,7 +65,7 @@ function App() {
     }
 
     return (
-      <form className="w-[320px] md:w-[600px] mx-auto p-4 bg-white shadow-md rounded-md">
+      <form className="w-full md:w-[600px] mx-auto p-4 bg-white shadow-md rounded-md">
         <h4 className="text-xl font-semibold my-4">Create Person</h4>
         <Input<IPersonFormData>
           label="First Name"
@@ -90,6 +92,7 @@ function App() {
           name="dateOfBirth"
           value={formData.dateOfBirth}
           onChange={handleChange}
+          max={currentDate}
           required
         />
         <TypeOrSelect 
@@ -165,7 +168,7 @@ function App() {
   }
 
   return (
-    <div className="bg-light-green p-8 min-h-screen">
+    <div className="bg-light-green p-4 md:p-8 min-h-screen">
       <img src={logo} className="mx-auto mb-12 h-16" alt='verticode_logo' />
       {renderContent()}
     </div>
