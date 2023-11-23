@@ -13,8 +13,22 @@ After installing the packages you can run the application with
 ```
 npm run start
 ```
+
+## Solution Screenshots
 <img width="760" alt="Screenshot 2023-11-22 at 20 20 00" src="https://github.com/Gbolade-True/Verticode/assets/59853755/d3c3a77c-b4b5-4337-9016-e4af15be9192">
 <img width="616" alt="Screenshot 2023-11-22 at 20 19 51" src="https://github.com/Gbolade-True/Verticode/assets/59853755/663c9d0e-e3d0-45bb-bb58-998cfab0e919">
+
+### Actions
+- Created the form based on IPerson
+- Styled with tailwindcss
+- Added form validation
+- Created custom components (ClickOutside, Input, Options, Select, TextArea) in `/src/utils`
+- Created Card component in `/src/utils`
+- Setup unit tests
+- Used proper types, interfaces and Generics
+- Added UI responsiveness
+- Linked work to a Git Repository
+
 ## Tasks
 
  - Build a form to create a new person based on the person model provided

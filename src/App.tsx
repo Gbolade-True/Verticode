@@ -95,7 +95,7 @@ function App() {
           max={currentDate}
           required
         />
-        <TypeOrSelect 
+        <TypeOrSelect<IPersonFormData>
           label="Job"
           id="job"
           name="job"
